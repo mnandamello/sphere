@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
@@ -13,7 +16,7 @@ export default function Home() {
         <Image src="/login.png" alt="login" width={554} height={832}/>
       </aside>
 
-      <div>
+      <div className="flex flex-col items-center">
         <div className="size-[75px] bg-rose-600 rounded-full"></div>
         <h1 className="text-4xl font-extrabold uppercase">Sphere</h1>
 
@@ -24,11 +27,24 @@ export default function Home() {
           </TabsList>
 
           <TabsContent value="entrar">
-            <h1>form login</h1>
+            <form action="" className="flex flex-col items-center gap-8" >
+              <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="email">Email</Label>
+                <Input type="email" id="email" placeholder="Email" />
+              </div>
+              <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="password">Senha</Label>
+                <Input type="password" id="password" placeholder="***" />
+              </div>
+              <Button>Entrar</Button>
+            </form>
           </TabsContent>
 
           <TabsContent value="registrar">
-            <h1>form cadastro</h1>
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" id="email" placeholder="Email" />
+            </div>
           </TabsContent>
 
         </Tabs>
